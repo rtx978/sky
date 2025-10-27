@@ -7,10 +7,10 @@ sky:
     username: root
     password: 92978
   alioss:
-#    endpoint: oss-cn-beijing.aliyuncs.com
-#    access-key-id: LTAI5tMgCGHFHXXxMuahcHaW
-#    access-key-secret: DVxk3NIQBWDLPXaUVYmsGfnKhbNLyM
-#    bucket-name: rtx92978
+    endpoint: oss-cn-beijing.aliyuncs.com
+    access-key-id: 
+    access-key-secret:
+    bucket-name: rtx92978
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
