@@ -1,5 +1,6 @@
 package com.sky.entity;
 
+import com.sky.dto.DishDTO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -47,4 +48,19 @@ public class Dish implements Serializable {
 
     private Long updateUser;
 
+    public Dish(DishDTO dto) {
+        this.name = dto.getName();
+        this.categoryId = dto.getCategoryId();
+        this.price = dto.getPrice();
+        this.image = dto.getImage();
+        this.description = dto.getDescription();
+        this.status = dto.getStatus();
+        this.createTime = dto.getCreateTime();
+        this.updateTime = dto.getUpdateTime();
+        this.createUser = dto.getCreateUser();
+        this.updateUser = dto.getUpdateUser();
+        this.id = dto.getId();
+//        this.status = dto.getStatus();
+
+    }
 }

@@ -75,11 +75,11 @@ public class EmployeeServiceImpl implements EmployeeService {
         BeanUtils.copyProperties(e,em);
         em.setPassword(DigestUtils.md5DigestAsHex(PasswordConstant.DEFAULT_PASSWORD.getBytes()));
         em.setStatus(StatusConstant.ENABLE);
-        em.setCreateTime(LocalDateTime.now());
-        em.setUpdateTime(LocalDateTime.now());
-        //TODO 后去修改为当前登录用户ID
-        em.setCreateUser(BaseContext.getCurrentId());
-        em.setUpdateUser(BaseContext.getCurrentId());
+//        em.setCreateTime(LocalDateTime.now());
+//        em.setUpdateTime(LocalDateTime.now());
+//        //TODO 后去修改为当前登录用户ID  已do
+//        em.setCreateUser(BaseContext.getCurrentId());
+//        em.setUpdateUser(BaseContext.getCurrentId());
 
         employeeMapper .insert(em);
     }
@@ -103,5 +103,19 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeMapper.update(em);
     }
 
+    @Override
+    public Employee getById(Long id) {
+        Employee employee = employeeMapper.getById(id);
+        employee.setPassword("****");
+        return employee;
+    }
+
+    public void update(EmployeeDTO d){
+        Employee e=new Employee();
+        BeanUtils.copyProperties(d,e);
+//        e.setUpdateUser(BaseContext.getCurrentId());
+//        e.setUpdateTime(LocalDateTime.now());
+        employeeMapper.update(e);
+    }
 
 }
