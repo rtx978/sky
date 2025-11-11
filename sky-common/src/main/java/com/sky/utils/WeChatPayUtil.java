@@ -33,7 +33,7 @@ import java.util.List;
  * 微信支付工具类
  */
 @Component
-public class WeChatPayUtil {
+public  class WeChatPayUtil {
 
     //微信支付下单接口地址
     public static final String JSAPI = "https://api.mch.weixin.qq.com/v3/pay/transactions/jsapi";
@@ -214,7 +214,7 @@ public class WeChatPayUtil {
      * @param total         原订单金额
      * @return
      */
-    public String refund(String outTradeNo, String outRefundNo, BigDecimal refund, BigDecimal total) throws Exception {
+    public  String refund(String outTradeNo, String outRefundNo, BigDecimal refund, BigDecimal total) throws Exception {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("out_trade_no", outTradeNo);
         jsonObject.put("out_refund_no", outRefundNo);
